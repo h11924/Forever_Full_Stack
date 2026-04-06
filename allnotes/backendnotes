@@ -108,4 +108,7 @@ now next we will see the place order stuff..for that also we need a model,contro
 now we wi;; learn to deply this on verson.
 in backend,frontend and also admin  make a file vercel.json and paste the code as given
 than in overall project we will make a file called gitignore
+we pushed on github....than craeted a account in versel and than did add new and select project
+
+we need to connect our github with versel....import project...select abackend put all enviroment verables and than deploy it.
 
