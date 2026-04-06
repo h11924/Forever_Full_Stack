@@ -10,6 +10,9 @@ import orderRouter from './routes/orderRoute.js'
 
 const app = express()
 
+connectDB();
+connectCloudinary();
+
 app.use(express.json())
 app.use(cors())
 
