@@ -1,0 +1,91 @@
+-------------------------------------------------------------------------------------------------
+//jan 6 11:30pm
+we are making this 1st full stck project and till now we used vite to sstart
+we made a overall folder and makde a frontend folder and install all the vite dependencies in the fronend folder on;y 
+aftre this all installations also we will install..react-router-dom (using this we xan creat multiple routes )0 and react -tostify
+to run this project we simply typw nmp run dev 
+
+
+we deleted the inbulit app.css file to remove all the stuff that was already given to us 
+
+import React from 'react';
+
+const App=()=>{
+  return (
+    <div>
+      <h1></h1>
+    </div>
+  );
+}
+export default App;
+we will get this all by rafce by installing the extention..ES7 React/Redux 
+
+this is the basic we will start in app.js
+
+the main html file is index.html
+we downlodede the frontend assets from his description and it the way he wanted us to do
+
+
+we are setting up all thw tailwind as well so use gemini or got for that we need to craete 2 files for that and also add some code in that and also some in index.css also
+
+-------------------------------------------------------------------------------------------------
+//jan 7 11:30am
+there were few errors as we as we did yesterday with the tailwind file so we updated them and now followed gemini for it 
+in src folder we made 2 more folders one namesd as pages and other as components 
+we came to the page folder and created all the files in it 9 files in total
+now we have to setup our route 
+import { BrowserRouter } from 'react-router-dom' importing this for making routes and wrapping the entire project in <BrowserRouter>
+    
+      <App />
+   
+  </BrowserRouter> for using the router stuff 
+  after this we made all the routes on our app.jsx file ..all 9 routes made 
+  so after this we made a component as nav bar and tried to import the logo but it made many issues and our first learning is NAME ALL THE FILES AS CAPITAL ONLY FROM NOW ONLY
+ till now we made all the navbars here-navbar is a navigation bar which helps the users to move to diff pages 
+
+ flex puts in a row 
+ the navbar is a component made and we added all the navigations link to it using this text
+
+ in navbar we made a undeline whish was earlier hidden but will be seen when we are on that one particular page....this was done in navbar and this line in index.css
+ a.active hr{
+    display:block
+}
+
+DONT PUT ANY EXTRA SPACE WHILE GIVING PATHS IN NAVBAR
+MAKE SURE TO SEE WHERE YOU ARE CLOSING THE TAGS AND WHERE YOU ARE PUTTING THE CONTAINERS...PUTTING ANYTHING OUTSIDE A TAG CAN MAKE MISTAKES 
+-------------------------------------------------------------------------------------------------
+//JAN 7 2:30
+here we made the cart icon on the top right side of the navbar
+we also made the menu icon for small screens only 
+we also made the side bar for small screens only
+we made a state variable visible and setVisible using useState hook of react
+----------------------------------------------------------------------------------------------------------------------------------------------
+
+//JAN 09 
+import Hero from '../components/Hero' AND THIS import Hero from '..components/Hero' ARE DIFFERENT 
+if the page isnt getting upaated stop the entire course and start again this will help.
+ALWAYS MAKE SURE TO CHECK THE SPELLINGS AND CASE SENSITIVITY WHILE IMPORTING
+
+-------------------------------------------------------------------------------------------------
+//JAN 12
+make sure to import all files and all properly as shown in the video
+we are making all the files in src only...we made the provider folder in wrong place and it caused us so much problem 
+we made the home page till here and if we click on any product page we go on the product page and of it...we need to learn that how are we making images clickable here 
+we are making the logo also clickable......we will wrap the img tag with link tag <link to="put where you want to take it.....> simple 
+we stored the data of all the products and it had name id and also a boolean variable as best sekker and we will be using a best seller property boolean to show only the best sellers overe there 
+preventdeafult will prevent from reloading the page 
+we also have footer tags which will be mounted in all the pages,we well render it in the main page only 
+after home oage we are making the collections page and that we are showing men women and kids collections
+here we are also having some filter as high low price...but how is it getting implemented here ?we have a tag claeed select tag and in it we can select differnet options 
+later you should properly about how this collection page ws made
+as we are clickimg on the filters men women or whatever we see that theya are getiing in a array
+--------------------------------------------------------------------------------------------------------------------
+//JAN 13
+when we click on men we have men in that array...when we click on women we have women on that array and if we click all we have all men wowmen and chikder in thata rray
+similr thing is made for category of tops bottema as well
+we are using useEffect here to set the data according to the filters we are applying...this filters stuff is happeing at 2:23 mins 
+now i am copy pasting the entire frontend from gemini 1:25 to 5:10 min 
+so till here our frontend is over and what we need is to do the backend now
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+

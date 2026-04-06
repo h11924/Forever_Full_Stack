@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../allnotes"
+		},
+		{
+			"path": "../backend"
+		},
+		{
+			"path": "../frontend"
+		}
+	]
+}

@@ -1,0 +1,111 @@
+make a file server.js
+than npm init
+cors: Allows the frontend (different IP/Port) to communicate with and access the backend APIs [05:13:13].
+dotenv: Enables the use of environment variables (stored in a .env file) to keep sensitive data like API keys secret [05:13:20].
+express: The core web framework used to build the server and create the API endpoints [05:13:27].
+jsonwebtoken (JWT): Used for user authentication, allowing users to stay logged in securely after an account is created [05:13:35].
+mongoose: A tool that manages the connection and data modeling between the Node.js server and the MongoDB database [05:13:42].
+multer: A middleware for handling multipart/form-data, specifically used for uploading and storing images to cloud storage [05:13:48].
+nodemon: A development tool that automatically restarts the backend server every time you save changes to your code [05:13:58].
+razorpay: The official library to integrate the Razorpay payment gateway for online transactions [05:14:10].
+stripe: The official library to integrate the Stripe payment gateway for international credit card payments [05:14:13].
+validator: A library used to check if the data provided by users (like email formats) is valid [05:14:18].
+cloudinary: A cloud-based service used to store and manage the product images uploaded through the admin panel [05:14:23].
+bcrypt: A security package used to hash (encrypt) user passwords before storing them in the database for safety [05:14:27].
+--------------------------------------------------------------------------------------------------------------------------------
+5/MARCH/2026
+after installing all pacakges we make our mvc folder system and in a file outside we put a server.js and after that we will connect mongodb through mongodb cluster and than connect its string by making a env folder.
+
+while making mongodb connection make sure that you are putting the  project name and also the mongodb password correctly.here my password is Harshita123.
+
+after this we madde a cloudinary.js in config it is a website in which we are making a api amd putting the cloudinary api key in our env file.
+CLOUDINARY_API_KEY="989491412181466"
+CLOUDINARY_SECRET_KEY="Q1txCZjUbKxJa6otR_oGrbwMBp0"
+CLOUDINARY_NAME="dcuktodmf"
+wwe put this all
+like we made connection in the monogdb similarly there will be made a connection btw  cloudinary as well.
+
+than we created a monnogose scheme model for the product ad than for user.
+after user model is craeted we will make a controller for craeting a user or helping the user login in it and also a admin login page
+than we make a user route file
+if something doesnt work....try to fix it and than restart the server
+till now we made the complete registration function...ppl can register if they have string passworod and we also bcrypted their password and also made a token for that user.
+we made register and also login and both are working file.
+next we will make a file for adding products...we added addproduct,searchproduct,removeproduct,getproduct controllers in a new file.
+now we are making a middleware using multer....what and why???we dont know what is multer should learn about it
+taking a brk as i dont know what is multer.
+--------------------------------------------------------------------------------------------------------------------------------
+5 march,eveninh
+to add products we need to upload a file so we want to make a multer for that.
+--------------------------------------------------------------------------------------------------------------------------------
+6 march afternoon
+we are tring to add images of the prodduct in addproduct which is in product controller...but the images cant be saved in mongodb so we put them in cloudinary and than upload the url in the database.
+we finished adding removing and doing things with the product router and now we will also put the authorisation for admin to add and remove.but here i didnt understand the part and also didnt get the token part properly...need to look here later again properly
+now we will move towrds making the admin panel
+we have frontend and bavkend but now we will close all these files and make a folder named admin and make a react vite app in it.
+we made admin as fronteend making of it and also went to config and names as server:port
+--------------------------------------------------------------
+7 march
+there were so many fucking stupid arrays becuase of this tailwind which i resolved.
+now we are craeting 2 folders one is componenets and one is pages in the admin panel.
+we made pages of add list and order pages
+add browser router in main,.jsx
+we are doing a lot of shit in these and making pages...we made a admin login page and using axios there
+see below to see how are we using it
+make a env file and store your backend ka url and give it in varible in app.jsx
+than we do axios.post in required area
+learn how he preventing refersh logout
+
+---------------------------------------------------------------------------------------------------------------
+31 march
+we are taking the backend url in env of frontend 
+store backend url in shopcontext where you keep dollar value and delivery fee
+we are showing the products on frontpage no??? that all we earlier did for design those products were not official in any databse...now we want to put in such a way the products available in the databse are only seen there.
+so for that some chnages are been made in shopcontext file of frontend and we will put it in useeffect so that the function will run when required
+see that on first page we are displaying only the bestseller products and not everything so for that we need to maake some chnages in it so make it
+
+we found some  issues while trying to log  in in the admin portal...see below
+1. The "Closed House" Problem (Network Error)
+The Problem: When you first tried to log in, you saw "Network Error".
+
+Simple Explanation: This happened because your Backend server wasn't "awake." Your Admin Panel was trying to call your Backend, but there was no one there to answer the phone.
+
+The Fix: We opened a new terminal and ran npm run server. This "woke up" the Backend so it could start listening for your login request.
+
+2. The "Security Guard" Problem (CORS)
+The Problem: Even after the server was awake, the browser sometimes blocked the connection.
+
+Simple Explanation: Browsers are very protective. By default, they don't like it when a website on one port (5174) talks to a server on another port (4000). It's like a security guard blocking a stranger from entering the building.
+
+The Fix: we installed and added CORS to your server.js. This was essentially giving the Admin Panel a "Security Pass" so the Backend would trust it.
+
+3. The "Wrong Door" Problem (404 Not Found)
+The Problem: After fixing the network, you saw "Status code 404".
+
+Simple Explanation: A 404 means the house is open, but you are knocking on a door that doesn't exist. You were likely calling /admin but the backend was expecting /api/user/admin, or there was a small typo in the address.
+
+The Fix: We aligned the names. We made sure the "Door" created in userRoute.js had the exact same name as the one the Admin Panel was "knocking on" in Login.jsx.
+
+4. The "Missing Key" Problem (Export Error)
+The Problem: Your Backend crashed with a "SyntaxError" saying adminLogin was not provided.
+
+Simple Explanation: The "Door" (Route) was there, but when someone opened it, the "Room" (the actual code for logging in) was missing because it hadn't been "Exported" from the controller file.
+
+The Fix: We updated your userController.js to specifically include adminLogin in the exports list so the rest of the app could actually use it.
+
+------------------------------------------------------------------------------------------------
+1 april
+we made the login and regiter functionalityh 
+our login is happeing a token is generatde but the token is not working properly we solved it 
+we made all the errors go off and our authentication page is ready...we can login properly and our cart problem will also be solve soon
+
+---------------------------------------------------------------------------------------------------
+2 april
+we made the cart work properly
+now next we will see the place order stuff..for that also we need a model,controller and other stuff
+-----------------------------
+6 april
+now we wi;; learn to deply this on verson.
+in backend,frontend and also admin  make a file vercel.json and paste the code as given
+than in overall project we will make a file called gitignore
+
