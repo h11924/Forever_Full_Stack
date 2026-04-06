@@ -4,26 +4,25 @@ import 'dotenv/config'
 import connectDB from './config/mongodb.js'
 import connectCloudinary from './config/cloudinary.js'
 import userRouter from './routes/userRoute.js'
-import productRouter from './routes/productRouter.js' // CHECK THIS
+import productRouter from './routes/productRouter.js'
 import cartRouter from './routes/cartRoute.js'
 import orderRouter from './routes/orderRoute.js'
 
 const app = express()
-const port = process.env.PORT || 4000
-connectDB()
-connectCloudinary()
 
 app.use(express.json())
 app.use(cors())
 
-// API Endpoints - If these are missing, you get a 404
 app.use('/api/user', userRouter)
-app.use('/api/product', productRouter) // Enables /api/product/add
+app.use('/api/product', productRouter)
 app.use('/api/cart', cartRouter)
-app.use('/api/order', orderRouter) // Enables /api/order/list
+app.use('/api/order', orderRouter)
 
 app.get('/', (req, res) => {
     res.send("API Working")
 })
 
-app.listen(port, () => console.log('Server started on PORT : ' + port))
+// Handle Vercel serverless
+const server = app.listen(4000, () => console.log('Server started on PORT 4000'))
+
+export default app
